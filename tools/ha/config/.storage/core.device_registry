@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "minor_version": 4,
+  "key": "core.device_registry",
+  "data": {
+    "devices": [
+      {
+        "area_id": null,
+        "config_entries": [
+          "10d8ccdeba40bfe610a8b3157a1d89d4"
+        ],
+        "configuration_url": null,
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "859860fb44c6c07da593beb24582126c",
+        "identifiers": [
+          [
+            "sun",
+            "10d8ccdeba40bfe610a8b3157a1d89d4"
+          ]
+        ],
+        "manufacturer": null,
+        "model": null,
+        "name_by_user": null,
+        "name": "Sun",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
+      },
+      {
+        "area_id": null,
+        "config_entries": [
+          "1acd7b393d39d71ac725d384ade07d99"
+        ],
+        "configuration_url": "https://www.met.no/en",
+        "connections": [],
+        "disabled_by": null,
+        "entry_type": "service",
+        "hw_version": null,
+        "id": "5df1301d92898422a8014354aec0dd6f",
+        "identifiers": [
+          [
+            "met",
+            "1acd7b393d39d71ac725d384ade07d99"
+          ]
+        ],
+        "manufacturer": "Met.no",
+        "model": "Forecast",
+        "name_by_user": null,
+        "name": "Forecast",
+        "serial_number": null,
+        "sw_version": null,
+        "via_device_id": null
+      }
+    ],
+    "deleted_devices": []
+  }
+}

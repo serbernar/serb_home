@@ -1,0 +1,7 @@
+all:
+  hosts:
+    rasp1:
+      ansible_host: 192.168.0.159
+      priority: 101
+  vars:
+    ansible_user: sberebko
