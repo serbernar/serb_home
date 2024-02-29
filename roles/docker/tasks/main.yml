@@ -28,7 +28,9 @@
 - name: Install Docker SDK for python
   apt:
     force_apt_get: yes
-    name: python3-docker
+    name: 
+      - python3-docker
+      - docker-compose
     install_recommends: no
 
 - name: Add user to docker group
