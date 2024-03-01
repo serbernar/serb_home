@@ -4,9 +4,9 @@
   serial: 1
   roles:
     - stop_keepalived
-    # - bootstrap
+    - bootstrap
     - updates
-    # - sshd
+    - sshd
     - docker
     # - pihole
     - start_keepalived

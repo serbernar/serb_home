@@ -1,7 +1,12 @@
 all:
   hosts:
-    rasp1:
+    pi-home:
       ansible_host: 192.168.0.159
       priority: 101
   vars:
     ansible_user: sberebko
+    ansible_password: xxx # only used on first run
+    ansible_python_interpreter: /usr/bin/python3
+    github_user_for_ssh_key: serbernar
+    timezone: "Europe/Kiev"
+    static_dns: "1.1.1.1"

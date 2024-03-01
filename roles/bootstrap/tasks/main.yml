@@ -1,0 +1,63 @@
+- name: Add ssh key
+  ansible.posix.authorized_key:
+    key: https://github.com/{{ github_user_for_ssh_key }}.keys
+    user: "{{ ansible_user }}"
+    comment: "github-{{ github_user_for_ssh_key }}"
+
+- name: Lock password for {{ ansible_user }}
+  user:
+    name: "{{ ansible_user }}"
+    password_lock: yes
+
+- name: bashrc for {{ ansible_user }}
+  blockinfile:
+    path: "/home/{{ ansible_user }}/.bashrc"
+    block: alias ll='ls -la'
+
+- name: bashrc for root
+  blockinfile:
+    path: "{{ ansible_user_dir }}/.bashrc"
+    block: |
+      export LS_OPTIONS='--color=auto'
+      eval "`dircolors`"
+      alias ls='ls $LS_OPTIONS'
+      alias ll='ls $LS_OPTIONS -la'
+      alias l='ls $LS_OPTIONS -lA'
+
+      if ! shopt -oq posix; then
+        if [ -f /usr/share/bash-completion/bash_completion ]; then
+          . /usr/share/bash-completion/bash_completion
+        elif [ -f /etc/bash_completion ]; then
+          . /etc/bash_completion
+        fi
+      fi
+
+- name: Set timezone
+  lineinfile:
+    path: /etc/timezone
+    regexp: "^"
+    line: "{{ timezone }}"
+
+- name: Set localtime
+  file:
+    src: /usr/share/zoneinfo/{{ timezone }}
+    dest: /etc/localtime
+    state: link
+
+- name: Set hostname
+  lineinfile:
+    path: /etc/hostname
+    regexp: "^"
+    line: "{{ inventory_hostname }}"
+  notify: Reboot after hostname change
+
+- name: Set hosts
+  lineinfile:
+    path: /etc/hosts
+    regexp: "^127.0.1.1"
+    line: 127.0.1.1       {{ inventory_hostname }}
+  notify: Reboot after hostname change
+
+
+- name: Flush handlers
+  meta: flush_handlers
