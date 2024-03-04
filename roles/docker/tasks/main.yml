@@ -50,5 +50,9 @@
       }
   notify: Restart Docker
 
+- name: Reset ssh connection to allow user changes to affect ansible user
+  ansible.builtin.meta:
+    reset_connection
+
 - name: Flush handlers
   meta: flush_handlers

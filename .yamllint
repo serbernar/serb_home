@@ -1,0 +1,4 @@
+skip_list:
+  - yaml[trailing-spaces]
+  - yaml[indentation]
+  - yaml[truthy]

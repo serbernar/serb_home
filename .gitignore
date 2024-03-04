@@ -9,9 +9,12 @@ env/
 venv/
 
 .idea/
+.vscode/
 
 *.sqlite
 *.db
 tools/ha/config/.storage/
 *.db-shm
 *.db-wal
+
+volumes/

@@ -12,76 +12,11 @@
   ],
   "apps": [
     {
-      "id": "5df743d9-5cb1-457c-85d2-64ff86855652",
-      "name": "Documentation",
-      "url": "https://homarr.dev",
-      "behaviour": {
-        "onClickUrl": "https://homarr.dev",
-        "externalUrl": "https://homarr.dev",
-        "isOpeningNewTab": true
-      },
-      "network": {
-        "enabledStatusChecker": false,
-        "statusCodes": [
-          "200"
-        ]
-      },
-      "appearance": {
-        "iconUrl": "/imgs/logo/logo.png",
-        "appNameStatus": "normal",
-        "positionAppName": "column",
-        "lineClampAppName": 1,
-        "appNameFontSize": 16
-      },
-      "integration": {
-        "type": null,
-        "properties": []
-      },
-      "area": {
-        "type": "wrapper",
-        "properties": {
-          "id": "default"
-        }
-      },
-      "shape": {
-        "md": {
-          "location": {
-            "x": 5,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 1
-          },
-          "size": {
-            "width": 1,
-            "height": 2
-          }
-        },
-        "lg": {
-          "location": {
-            "x": 4,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
-            "height": 1
-          }
-        }
-      }
-    },
-    {
-      "id": "eed74122-b99c-4a67-b3df-452e5e14f30d",
+      "id": "181d0611-d829-42a6-b5f2-79d6f7e77101",
       "name": "Home Assistant",
       "url": "http://192.168.0.159:8123",
       "appearance": {
-        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/home-assistant-alt.svg",
+        "iconUrl": "https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/home-assistant.svg",
         "appNameStatus": "normal",
         "positionAppName": "column",
         "lineClampAppName": 1,
@@ -100,7 +35,7 @@
       },
       "behaviour": {
         "isOpeningNewTab": true,
-        "externalUrl": "http://192.168.0.159:8123/"
+        "externalUrl": "http://192.168.0.159:8123"
       },
       "area": {
         "type": "wrapper",
@@ -111,21 +46,11 @@
       "shape": {
         "lg": {
           "location": {
-            "x": 2,
-            "y": 0
+            "x": 0,
+            "y": 1
           },
           "size": {
             "width": 2,
-            "height": 1
-          }
-        },
-        "sm": {
-          "location": {
-            "x": 0,
-            "y": 0
-          },
-          "size": {
-            "width": 1,
             "height": 1
           }
         }
@@ -136,13 +61,64 @@
           {
             "field": "apiKey",
             "type": "private",
-            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI2MGM3MjBhMDVmZTE0OWY0YmViMTc2Y2RlNTlhM2JmYiIsImlhdCI6MTcwOTI0NDQ5OCwiZXhwIjoyMDI0NjA0NDk4fQ.poZW59CwSx8WTzocBw6O3LEFhq8-1pw57tOrUhgWW6s"
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwZDkwOTRhNWM5YTY0MDk2YTMxZWM0MGIwMzM0OTRkNiIsImlhdCI6MTcwOTU4MTc3MywiZXhwIjoyMDI0OTQxNzczfQ.1YbJQUS9XnOpLL9s24HINd1xYjm05WEGgxG1wbjIbzE"
           }
         ]
       }
     }
   ],
   "widgets": [
+    {
+      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
+      "type": "weather",
+      "properties": {
+        "displayInFahrenheit": false,
+        "location": {
+          "name": "Unknown location",
+          "longitude": 30.08876,
+          "latitude": 50.55888
+        },
+        "displayCityName": false
+      },
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "md": {
+          "location": {
+            "x": 5,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "sm": {
+          "location": {
+            "x": 2,
+            "y": 0
+          },
+          "size": {
+            "width": 1,
+            "height": 1
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 2
+          },
+          "size": {
+            "width": 2,
+            "height": 1
+          }
+        }
+      }
+    },
     {
       "id": "971aa859-8570-49a1-8d34-dd5c7b3638d1",
       "type": "date",
@@ -188,7 +164,7 @@
         },
         "lg": {
           "location": {
-            "x": 0,
+            "x": 1,
             "y": 0
           },
           "size": {
@@ -199,16 +175,14 @@
       }
     },
     {
-      "id": "e3004052-6b83-480e-b458-56e8ccdca5f0",
-      "type": "weather",
+      "id": "7783f1c0-663a-4e56-b082-00718330c576",
+      "type": "smart-home/entity-state",
       "properties": {
-        "displayInFahrenheit": false,
-        "location": {
-          "name": "Unknown location",
-          "longitude": 30.08876,
-          "latitude": 50.55888
-        },
-        "displayCityName": false
+        "entityId": "sensor.atc_hsbath_de74_temperature",
+        "appendUnit": true,
+        "automationId": "",
+        "displayName": "Temperature in Bathroom",
+        "displayFriendlyName": true
       },
       "area": {
         "type": "wrapper",
@@ -217,9 +191,9 @@
         }
       },
       "shape": {
-        "md": {
+        "sm": {
           "location": {
-            "x": 5,
+            "x": 0,
             "y": 0
           },
           "size": {
@@ -227,9 +201,9 @@
             "height": 1
           }
         },
-        "sm": {
+        "md": {
           "location": {
-            "x": 2,
+            "x": 0,
             "y": 0
           },
           "size": {
@@ -240,10 +214,10 @@
         "lg": {
           "location": {
             "x": 0,
-            "y": 1
+            "y": 0
           },
           "size": {
-            "width": 2,
+            "width": 1,
             "height": 1
           }
         }
