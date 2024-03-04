@@ -28,6 +28,9 @@ services:
   ha:
     container_name: homeassistant
     image: ghcr.io/home-assistant/home-assistant:stable
+    build:
+      dockerfile: docker/Dockerfile
+      context: .
     restart: unless-stopped
     volumes:
       - ./tools/ha/config:/config

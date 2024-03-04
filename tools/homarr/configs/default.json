@@ -47,7 +47,7 @@
         "lg": {
           "location": {
             "x": 0,
-            "y": 1
+            "y": 3
           },
           "size": {
             "width": 2,
@@ -219,6 +219,49 @@
           "size": {
             "width": 1,
             "height": 1
+          }
+        }
+      }
+    },
+    {
+      "id": "40051b73-ee50-4b05-b0eb-9271e377d4aa",
+      "type": "dlspeed",
+      "properties": {},
+      "area": {
+        "type": "wrapper",
+        "properties": {
+          "id": "default"
+        }
+      },
+      "shape": {
+        "sm": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "md": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
+          }
+        },
+        "lg": {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "size": {
+            "width": 2,
+            "height": 2
           }
         }
       }
