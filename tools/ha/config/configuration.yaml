@@ -9,9 +9,4 @@ frontend:
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-
-
-climate:
-  - platform: terneo
-    serial: 'AC0BFB71921CB0998A8A9900000141'
-    host: '192.168.0.157'
+climate: !include climate.yaml

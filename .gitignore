@@ -18,3 +18,5 @@ tools/ha/config/.storage/
 *.db-wal
 
 volumes/
+tools/mqtt/data/
+tools/mqtt/log/

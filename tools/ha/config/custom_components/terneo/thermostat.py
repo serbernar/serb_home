@@ -147,7 +147,7 @@ class Thermostat:
         """
         if self._temperature is None:
             data = self.status()
-            if data:
+            if data and 't.1' in data:
                 self._temperature = self.get_temperature(data)
         return self._temperature
 
@@ -162,7 +162,7 @@ class Thermostat:
         """
         if self._setpoint is None:
             data = self.status()
-            if data:
+            if data and 't.5' in data:
                 self._setpoint = self.get_setpoint(data)
         return self._setpoint
 
@@ -237,7 +237,21 @@ class Thermostat:
     def update(self):
         data = self.status()
         if data:
-            self._setpoint = self.get_setpoint(data)
-            self._temperature = self.get_temperature(data)
+            if 't.5' in data:
+                self._setpoint = self.get_setpoint(data)
+            if 't.1' in data:
+                self._temperature = self.get_temperature(data)
             self._mode = self.get_mode(data)
             self._state = self.get_state(data)
+
+
+if __name__ == "__main__":
+    serialnumber = '98CDACF55600989B59599B00000141'
+    host = '192.168.0.158'
+    port = '80'
+    username_ = None
+    password_ = None
+    therm = Thermostat(serialnumber, host, port=port, username=username_, password=password_)
+    my_data = therm.status()
+    print(my_data)
+    print(therm.get_setpoint(my_data))

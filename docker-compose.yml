@@ -73,10 +73,22 @@ services:
   grafana:
     image: grafana/grafana:latest
     restart: always
+    user: "1000"
     depends_on:
       - influxdb
     ports:
       - 3000:3000
     volumes:
       - ./volumes/grafana:/var/lib/grafana
-      
+  
+  mqtt5:
+    image: eclipse-mosquitto
+    container_name: mqtt5
+    ports:
+      - "1883:1883" #default mqtt port
+      - "9001:9001" #default mqtt port for websockets
+    volumes:
+      - ./tools/mqtt/config:/mosquitto/config:rw
+      - ./tools/mqtt/data:/mosquitto/data:rw
+      - ./tools/mqtt/log:/mosquitto/log:rw
+    restart: unless-stopped

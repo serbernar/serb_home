@@ -1,0 +1,8 @@
+- platform: terneo
+  name: WhatIsThis
+  serial: 'AC0BFB71921CB0998A8A9900000141'
+  host: '192.168.0.157'
+  username: ''
+  password: ''
+
+

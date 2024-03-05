@@ -7,6 +7,7 @@ import voluptuous as vol
 from typing import Optional
 
 from homeassistant.components.climate import PLATFORM_SCHEMA, ClimateEntity
+from homeassistant.const import UnitOfTemperature
 from homeassistant.components.climate.const import (
     CURRENT_HVAC_HEAT,
     CURRENT_HVAC_IDLE,
@@ -23,7 +24,6 @@ from homeassistant.const import (
     CONF_PASSWORD,
     CONF_PORT,
     CONF_USERNAME,
-    TEMP_CELSIUS,
 )
 import homeassistant.helpers.config_validation as cv
 
@@ -109,7 +109,7 @@ class ThermostatDevice(ClimateEntity):
     @property
     def temperature_unit(self):
         """Return the unit of measurement used by the platform."""
-        return TEMP_CELSIUS
+        return UnitOfTemperature.CELSIUS
 
     @property
     def hvac_action(self):
