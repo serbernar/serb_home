@@ -114,7 +114,7 @@ services:
       - ./volumes/media:/data
 
   deluge:
-    image: lscr.io/linuxserver/deluge:latest
+    image: jordancrawford/rpi-deluge
     container_name: deluge
     user: "1000"
     environment:
