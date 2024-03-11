@@ -81,9 +81,9 @@ services:
     volumes:
       - ./volumes/grafana:/var/lib/grafana
   
-  mqtt5:
+  mqtt:
     image: eclipse-mosquitto
-    container_name: mqtt5
+    container_name: mqtt
     ports:
       - "1883:1883" #default mqtt port
       - "9001:9001" #default mqtt port for websockets
@@ -92,3 +92,23 @@ services:
       - ./tools/mqtt/data:/mosquitto/data:rw
       - ./tools/mqtt/log:/mosquitto/log:rw
     restart: unless-stopped
+
+  plex:
+    image: plexinc/pms-docker:latest
+    container_name: plex
+    restart: unless-stopped
+    env_file:
+      - ./tools/plex/.env
+    ports:
+      - 32400:32400/tcp
+      - 8324:8324/tcp
+      - 32469:32469/tcp
+      - 1900:1900/udp
+      - 32410:32410/udp
+      - 32412:32412/udp
+      - 32413:32413/udp
+      - 32414:32414/udp
+    volumes:
+      - ./volumes/plex/database:/config
+      - ./volumes/plex/transcode:/transcode
+      - ./volumes/plex/media:/data
