@@ -94,7 +94,7 @@ services:
     restart: unless-stopped
 
   plex:
-    image: plexinc/pms-docker:latest
+    image: greensheep/plex-server-docker-rpi:latest
     container_name: plex
     restart: unless-stopped
     env_file:
