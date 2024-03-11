@@ -111,4 +111,23 @@ services:
     volumes:
       - ./volumes/plex/database:/config
       - ./volumes/plex/transcode:/transcode
-      - ./volumes/plex/media:/data
+      - ./volumes/media:/data
+
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    user: "1000"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DELUGE_LOGLEVEL=error #optional
+    volumes:
+      - /volumes/deluge/config:/config
+      - /volumes/media:/downloads
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+      - 58846:58846 #optional
+    restart: unless-stopped
