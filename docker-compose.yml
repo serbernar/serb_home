@@ -116,12 +116,10 @@ services:
   deluge:
     image: jordancrawford/rpi-deluge
     container_name: deluge
-    user: "1000"
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
-      - DELUGE_LOGLEVEL=error #optional
+      - TZ=Europe/Kiev
     volumes:
       - /volumes/deluge/config:/config
       - /volumes/media:/downloads
